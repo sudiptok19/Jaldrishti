@@ -6,7 +6,7 @@
   width: 90%;
   max-width: 1400px;
   height: 70px;
-  background: rgba(0, 0, 0, 0.95);
+  background: #1e2735;
   backdrop-filter: blur(10px);
   
   display: flex;
