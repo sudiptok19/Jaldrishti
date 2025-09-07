@@ -1,60 +1,120 @@
 import React from "react";
+import { motion } from "framer-motion";
 import "./Home.css";
 
 const Home = () => {
   return (
-    <section className="home">
+    <div 
+      className="home"
+      
+    >
       <div className="hero-section">
-        <div className="content-box">
+        <motion.div 
+          className="content-box"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           <div className="hero-content">
-            <h1>Welcome to Jal Drishti!</h1>
-            <p className="hero-description">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              Welcome to Jal Drishti!
+            </motion.h1>
+            <motion.p
+              className="hero-description"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
               Monitor water hazards in real-time with our comprehensive safety
               platform. Get instant alerts, track current conditions, and contribute to
               water safety across Indian waters.
-            </p>
-            <button className="get-started-btn">Get Started</button>
+            </motion.p>
+            <motion.button
+              className="get-started-btn"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Get Started
+            </motion.button>
           </div>
 
-          <div className="live-data-box">
+          <motion.div
+            className="live-data-container"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
             <div className="live-data-header">
-              <span className="pulse-icon">⚡</span>
+              <motion.span
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+              >
+                ⚡
+              </motion.span>
               <h3>Live Water Data</h3>
             </div>
-            <div className="stats-grid">
-              
-            </div>
-          </div>
-        </div>
+            <motion.div 
+              className="stats-grid"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+            >
+              {/* Your existing stats content */}
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </div>
 
-      <div className="how-to-use">
-        <h2>How to Use the Platform</h2>
-        <div className="steps-container">
-          <div className="step-card">
-            <div className="step-icon">📱</div>
-            <h3>Sign Up</h3>
-            <p>Create your account in seconds and join our water safety network</p>
-          </div>
-          <div className="step-card">
-            <div className="step-icon">🔍</div>
-            <h3>Monitor</h3>
-            <p>Track real-time water conditions and hazard alerts in your area</p>
-          </div>
-          <div className="step-card">
-            <div className="step-icon">⚡</div>
-            <h3>Report</h3>
-            <p>Submit water hazard reports and help keep communities safe</p>
-          </div>
-          <div className="step-card">
-            <div className="step-icon">🔔</div>
-            <h3>Stay Updated</h3>
-            <p>Receive instant notifications about critical water conditions</p>
-          </div>
-        </div>
+      <motion.div
+        className="how-to-use"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <motion.h2>How to Use the Platform</motion.h2>
+        
+      </motion.div>
+
+      <div className="info-rows">
+        <motion.div 
+          className="info-row"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h3>Real-time Monitoring</h3>
+          <p>Our advanced monitoring system provides up-to-the-minute data on water conditions across India. Using state-of-the-art sensors and satellite technology, we track water levels, flow rates, and potential hazards to ensure you have the most accurate information available.</p>
+        </motion.div>
+
+        <motion.div 
+          className="info-row"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <h3>Community-Driven Alerts</h3>
+          <p>Join a network of active citizens contributing to water safety. Our platform enables users to report hazards, verify conditions, and share critical updates. Together, we create a more responsive and effective water monitoring system.</p>
+        </motion.div>
+
+        <motion.div 
+          className="info-row"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <h3>Data-Driven Decision Making</h3>
+          <p>Transform raw data into actionable insights. Our analytics tools help authorities and communities make informed decisions about water management, emergency response, and infrastructure planning.</p>
+        </motion.div>
       </div>
-      
-    </section>
+    </div>
   );
 };
 
