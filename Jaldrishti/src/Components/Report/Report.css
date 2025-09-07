@@ -83,6 +83,7 @@ body {
 
 /* Main content */
 .main {
+  
   display: flex;
   justify-content: center;
   padding: 3rem 1.5rem;
@@ -90,10 +91,11 @@ body {
 
 .form-container {
   width: 100%;
-  max-width: 32rem; /* max-w-lg */
+  max-width: 48rem; /* Changed from 32rem to 48rem */
 }
 
 .form-card {
+  
   background-color: #1e293b; /* slate-800 */
   border-radius: 1rem;
   padding: 2rem;

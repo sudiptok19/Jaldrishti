@@ -33,25 +33,7 @@ export default function JaldrishtiReport() {
 
   return (
     <div className="container">
-      {/* Header */}
-      <header className="header">
-        <div className="header-inner">
-          <nav className="nav">
-            <span className="brand">
-              <span>🌊</span>
-              <span>Jaldrishti</span>
-            </span>
-            <button className="nav-button">Home</button>
-            <button className="nav-button">Dashboard</button>
-            <button className="nav-button active">Report</button>
-            <button className="nav-button">Map</button>
-            <button className="login-button">
-              Login
-            </button>
-          </nav>
-        </div>
-      </header>
-
+      
       {/* Main Content */}
       <main className="main">
         <div className="form-container">
