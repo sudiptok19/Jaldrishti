@@ -1,7 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "./Home.css";
 import { useNavigate } from "react-router-dom"; 
+import checkmark from "../../assets/checkmark.png";
+import cross from "../../assets/cross.png";
 
 const Home = () => {
 
@@ -9,6 +14,46 @@ const Home = () => {
   const handleLogin = () => {
     navigate("/login");
   };
+
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000
+  };
+
+  const emergencyData = [
+    {
+      title: "Emergency Helplines",
+      items: [
+        { icon: "", text: "Ambulance: 108" },
+        { icon: "", text: "Police: 100" },
+        { icon: "", text: "NDRF: 1078" },
+        { icon: "", text: "Fire: 101" }
+      ]
+    },
+    {
+      title: "Water Safety Tips",
+      items: [
+        { icon: "", text: "Stay away from overflowing banks" },
+        { icon: "", text: "Never swim in flood waters" },
+        { icon: "", text: "Avoid driving through flooded areas" },
+        { icon: "", text: "Keep emergency contacts handy" }
+      ]
+    },
+    {
+      title: "Flood Safety Guidelines",
+      items: [
+        { icon: <img src={checkmark} alt="Checkmark" className="checkmark-icon" style={{ height: "25px", width: "25px", display: "inline-block", marginRight: "8px",marginTop: "8px" }}/> , text: "DO: Move to higher ground" },
+        { icon: <img src={checkmark} alt="Checkmark" className="checkmark-icon" style={{ height: "25px", width: "25px", display: "inline-block", marginRight: "8px",marginTop: "8px" }}/>, text: "DO: Keep emergency kit ready" },
+        { icon: <img src={cross} alt="Checkmark" className="checkmark-icon" style={{ height: "25px", width: "25px", display: "inline-block", marginRight: "8px",marginTop: "8px" }}/>, text: "DON'T: Touch electrical equipment if wet" },
+        { icon: <img src={cross} alt="Checkmark" className="checkmark-icon" style={{ height: "25px", width: "25px", display: "inline-block", marginRight: "8px",marginTop: "8px" }}/>, text: "DON'T: Walk through moving water" }
+      ]
+    }
+  ];
 
   return (
     <div 
@@ -44,35 +89,13 @@ const Home = () => {
               className="get-started-btn"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={handleLogin}  // Add this line
             >
               Get Started
             </motion.button >
           </div>
 
-          <motion.div
-            className="live-data-container"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-          >
-            <div className="live-data-header">
-              <motion.span
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-              >
-                ⚡
-              </motion.span>
-              <h3>Live Map Alerts</h3>
-            </div>
-            <motion.div 
-              className="stats-grid"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-            >
-              {/* Your existing stats content */}
-            </motion.div>
-          </motion.div>
+          
         </motion.div>
       </div>
 
@@ -95,8 +118,8 @@ const Home = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h3>Real-time Monitoring</h3>
-          <p>Our advanced monitoring system provides up-to-the-minute data on water conditions across India. Using state-of-the-art sensors and satellite technology, we track water levels, flow rates, and potential hazards to ensure you have the most accurate information available.</p>
+          <h3>Open the Website</h3>
+          <p>Go to the hazard-reporting page on any device.</p>
         </motion.div>
 
         <motion.div 
@@ -106,8 +129,8 @@ const Home = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <h3>Community-Driven Alerts</h3>
-          <p>Join a network of active citizens contributing to water safety. Our platform enables users to report hazards, verify conditions, and share critical updates. Together, we create a more responsive and effective water monitoring system.</p>
+          <h3>Submit a Report</h3>
+          <p>Select the event type, add description, photos/videos, and let the site auto-geotag your location.</p>
         </motion.div>
 
         <motion.div 
@@ -117,10 +140,33 @@ const Home = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <h3>Data-Driven Decision Making</h3>
-          <p>Transform raw data into actionable insights. Our analytics tools help authorities and communities make informed decisions about water management, emergency response, and infrastructure planning.</p>
+          <h3>View Live Map & Updates</h3>
+          <p>Instantly see your report along with others on the interactive map and follow real-time alerts or safety tips.</p>
         </motion.div>
       </div>
+
+      <motion.div
+        className="safety-carousel-container"
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.5 }}
+      >
+        <Slider {...sliderSettings}>
+          {emergencyData.map((section, index) => (
+            <div key={index} className="carousel-slide">
+              <h3>{section.title}</h3>
+              <div className="info-grid">
+                {section.items.map((item, i) => (
+                  <div key={i} className="info-item">
+                    <span className="info-icon">{item.icon}</span>
+                    <span className="info-text">{item.text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </motion.div>
     </div>
   );
 };

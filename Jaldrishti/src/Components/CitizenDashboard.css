@@ -76,9 +76,9 @@
 
 /* Main Content */
 .main-content {
-  max-width: 1250px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem;
+  min-width: 100vh;
+  min-height: 100vh;
+  
 }
 
 .content-grid {
@@ -94,6 +94,8 @@
 
 .form-card {
   background-color: #0F131A;
+  margin-left: 10%;
+  margin-top: 4%;
   border-radius: 0.5rem;
   border: 1px solid #e2e8f0;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
@@ -274,11 +276,14 @@
 /* Sidebar Section */
 .sidebar-section {
   min-width: 0;
+  margin-top: 4%;
+  margin-right: 20%;
 }
 
 .sidebar-card {
   background-color: #0F131A;
   border-radius: 0.5rem;
+  margin-top: 15%;
   border: 1px solid #e2e8f0;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   padding: 1.5rem;
@@ -401,6 +406,8 @@
 
 /* Map Section */
 .map-section {
+  margin-left: 4%;
+  margin-bottom: 5%;
   width: 93%;
   height: 700px; /* or any height you want */
   background-color: #ffffff;
@@ -426,6 +433,7 @@
   margin-bottom: 1.5rem; /* spacing from other elements */
   margin-top: 25px;
   width: 93%;
+  margin-left: 3%;
 }
 
 .live-map-title {

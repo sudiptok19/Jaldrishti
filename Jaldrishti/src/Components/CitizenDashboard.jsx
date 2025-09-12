@@ -183,7 +183,7 @@ export default function CitizenDashboard() {
       <header className="app-header">
         <div className="header-content">
           <div className="header-left">
-            <h1 className="app-title">Jal Drishti</h1>
+            <h1 className="app-title">JalDrishti</h1>
             <p className="app-subtitle">Help keep coastal communities safe by reporting hazardous conditions</p>
           </div>
           <div className="language-toggle">

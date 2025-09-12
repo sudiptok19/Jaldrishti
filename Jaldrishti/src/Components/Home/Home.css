@@ -16,13 +16,16 @@ html, body {
   overflow: hidden; /* Prevent any overflow */
 }
 .content-box{
+  align-self: center;
+  
   display: flex;
   gap:100px;
   }
 
 .hero-content{
-  
+  padding:0;
   background: #0F131A;
+  width:100%;
   border-radius: 12px;
   border: 1px solid #3787F2;
   box-shadow: 0 0 20px rgba(100, 255, 218, 0.1),
@@ -171,7 +174,7 @@ html, body {
   text-align: center;
   color: #ffffff;
   font-size: 2.5rem;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
 }
 
 .steps-container {
@@ -244,6 +247,59 @@ html, body {
   font-size: 16px;
 }
 
+.safety-carousel-container {
+  background: rgba(100, 255, 218, 0.05);
+  border: 1px solid rgba(100, 255, 218, 0.2);
+  border-radius: 12px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(100, 255, 218, 0.1);
+}
+
+.carousel-slide {
+  padding: 1rem;
+}
+
+.carousel-slide h3 {
+  color: #64ffda;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.info-icon {
+  font-size: 1.5rem;
+}
+
+.info-text {
+  color: #8892b0;
+  font-size: 1rem;
+}
+
+/* Customize slider dots */
+.slick-dots li button:before {
+  color: #64ffda;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #64ffda;
+}
+
 @media (max-width: 768px) {
   .hero-section {
     padding: 100px 20px 40px;
@@ -283,5 +339,13 @@ html, body {
   
   .info-row h3 {
     font-size: 20px;
+  }
+  
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .carousel-slide {
+    padding: 0.5rem;
   }
 }

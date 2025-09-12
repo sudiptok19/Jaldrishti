@@ -11,25 +11,8 @@ const Map = () => {
           <p>Map will be integrated here</p>
         </div>
       </div>
-      <div className="map-legend">
-        <h3>Legend</h3>
-        <div className="legend-item">
-          <span className="legend-dot flooding"></span>
-          <p>Flooding</p>
-        </div>
-        <div className="legend-item">
-          <span className="legend-dot water-logging"></span>
-          <p>Water Logging</p>
-        </div>
-        <div className="legend-item">
-          <span className="legend-dot contamination"></span>
-          <p>Water Contamination</p>
-        </div>
-        <div className="legend-item">
-          <span className="legend-dot leakage"></span>
-          <p>Pipeline Leakage</p>
-        </div>
-      </div>
+      
+      
     </div>
   );
 };
