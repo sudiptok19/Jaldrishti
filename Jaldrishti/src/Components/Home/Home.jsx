@@ -1,8 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "./Home.css";
+import { useNavigate } from "react-router-dom"; 
 
 const Home = () => {
+
+  const navigate = useNavigate();
+  const handleLogin = () => {
+    navigate("/login");
+  };
+
   return (
     <div 
       className="home"
@@ -37,9 +44,10 @@ const Home = () => {
               className="get-started-btn"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={handleLogin}
             >
               Get Started
-            </motion.button>
+            </motion.button >
           </div>
 
           <motion.div
@@ -55,7 +63,7 @@ const Home = () => {
               >
                 ⚡
               </motion.span>
-              <h3>Live Water Data</h3>
+              <h3>Live Alerts</h3>
             </div>
             <motion.div 
               className="stats-grid"

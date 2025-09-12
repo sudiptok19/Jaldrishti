@@ -1,3 +1,6 @@
+import CitizenDashboard from "../CitizenDashboard";
+import AnalystDashboard from "../AnalystDashboard";
+import AdminDashboard from "../AdminDashboard";
 import React, { useState, useEffect } from "react";
 import {
   User,
@@ -177,19 +180,33 @@ const Login = () => {
   };
 
   if (user) {
-    return (
-      <div className="container">
-        <div className="card">
-          <h2>Welcome!</h2>
-          <p>{user.email}</p>
-          <h3>Role: {user.roleName}</h3>
-          <button onClick={handleLogout} className="logout-btn">
-            Logout
-          </button>
-        </div>
-      </div>
-    );
-  }
+  const renderDashboard = () => {
+    switch (user.role) {
+      case "citizen":
+        return <CitizenDashboard user={user} onLogout={handleLogout} />;
+      case "analyst":
+        return <AnalystDashboard user={user} onLogout={handleLogout} />;
+      case "admin":
+        return <AdminDashboard user={user} onLogout={handleLogout} />;
+      default:
+        return (
+          <div className="container">
+            <div className="card">
+              <h2>Welcome!</h2>
+              <p>{user.email}</p>
+              <p>Unknown role: {user.role}</p>
+              <button onClick={handleLogout} className="logout-btn">
+                Logout
+              </button>
+            </div>
+          </div>
+        );
+    }
+  };
+
+  return renderDashboard();
+}
+
 
   if (showLoginForm) {
   const SelectedIcon = selectedRole.icon;
