@@ -29,7 +29,7 @@ const Home = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              Monitor water hazards in real-time with our comprehensive safety
+              Monitors water hazards in real-time with our comprehensive safety
               platform. Get instant alerts, track current conditions, and contribute to
               water safety across Indian waters.
             </motion.p>
@@ -37,6 +37,7 @@ const Home = () => {
               className="get-started-btn"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+
             >
               Get Started
             </motion.button>
