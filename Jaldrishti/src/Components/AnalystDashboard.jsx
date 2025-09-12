@@ -85,6 +85,7 @@ export default function AnalystDashboard() {
       collection(db, "hazardReports"),
       orderBy("timestamp", "desc")
     );
+    
 
     const unsubscribe = onSnapshot(
       reportsQuery,

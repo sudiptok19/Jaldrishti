@@ -62,7 +62,7 @@ const Home = () => {
               >
                 ⚡
               </motion.span>
-              <h3>Live Alerts</h3>
+              <h3>Live Map Alerts</h3>
             </div>
             <motion.div 
               className="stats-grid"

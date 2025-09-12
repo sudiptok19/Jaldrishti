@@ -10,6 +10,7 @@ import Footer from "./Components/Footer/Footer";
 import Login from "./Components/Login/Login";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import './index.css';
 
 import "./App.css";
 
